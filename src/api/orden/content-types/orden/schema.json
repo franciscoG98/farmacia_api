@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ordens",
+  "info": {
+    "singularName": "orden",
+    "pluralName": "ordens",
+    "displayName": "Orden"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Estado": {
+      "type": "enumeration",
+      "enum": [
+        "pendiente",
+        "aprobada",
+        "rechazada",
+        "completada"
+      ]
+    },
+    "Total": {
+      "type": "decimal",
+      "required": true
+    },
+    "Fecha": {
+      "type": "datetime",
+      "required": true
+    },
+    "productos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::producto.producto",
+      "inversedBy": "ordens"
+    },
+    "Receta": {
+      "type": "boolean",
+      "required": true
+    },
+    "ObraSocial": {
+      "type": "string"
+    }
+  }
+}
