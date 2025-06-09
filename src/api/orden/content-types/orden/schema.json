@@ -40,6 +40,11 @@
     },
     "ObraSocial": {
       "type": "string"
+    },
+    "SKU": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
